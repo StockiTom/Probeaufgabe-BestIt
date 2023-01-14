@@ -1,0 +1,24 @@
+Create a digital store window with a simple login / user authentication:
+
+* Password protected / Login form
+* Products are stored in a database
+* Product-Overview after login
+* Product information to be displayed
+    - Article number
+    - Name
+    - Description
+    - Price
+    - Image
+
+
+* Checkout, Cart, Pagination, Productdetails is NOT necessary
+* Backend for data management is NOT necessary. It’s okay to maintain data directly in the database.
+
+
+Technologies to use
+-------------------
+* For frontend code please use a JavaScript-Framework (Vue, React ...)
+* For backend code feel free to use any language (PHP, node.js, ...)
+
+Upload your code to a Github Repository and share the link with us
+Provide us with a Readme in the repository how to run the project locally
