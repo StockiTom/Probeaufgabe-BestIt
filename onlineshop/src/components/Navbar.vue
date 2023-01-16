@@ -1,9 +1,5 @@
 <template>
     <div>
-      <!-- <h1>{{msg}}</h1>
-      <img src="../assets/logo.png"/>
-      <div><router-link to="/">LogIn</router-link></div>
-      <div><router-link to="/Registrieren">SignUp</router-link></div> -->
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary text-bg-primary">
         <div class="container-fluid">
@@ -46,6 +42,7 @@
       }
 
       .nav-link a:hover{
+        padding: 5px;
         background-color: lightblue;
         color: white;
       }

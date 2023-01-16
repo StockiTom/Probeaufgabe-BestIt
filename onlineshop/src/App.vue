@@ -2,6 +2,7 @@
   <div>
     <navBar msg="Online Shop"></navBar>
     <router-view></router-view>
+    <Footer/>
   </div>
   
 </template>
@@ -11,11 +12,13 @@
 //import SignUp from './components/SignUp.vue';
 
 import navBar from "./components/Navbar.vue"
+import Footer from "./components/Footer.vue"
 
 export default {
   name: 'App',
   components: {
-    navBar
+    navBar,
+    Footer
   }
 }
 </script>

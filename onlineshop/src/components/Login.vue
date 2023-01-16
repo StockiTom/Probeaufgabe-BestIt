@@ -4,15 +4,15 @@
     
     <form style="width: 40%; margin-left: auto; margin-right: auto;">
       <div class="row mb-3">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Benutzername:</label>
+        <label for="inputUser1" class="col-sm-2 col-form-label">Benutzername:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3">
+          <input type="text" class="form-control" id="inputUser1">
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Passwort:</label>
+        <label for="inputPassword2" class="col-sm-2 col-form-label">Passwort:</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3">
+          <input type="password" class="form-control" id="inputPassword2">
         </div>
       </div>
       <button type="submit" class="btn btn-primary">LogIn</button>
@@ -40,12 +40,10 @@
     div{
       text-align: center;
     }
-    form{
-      margin: 5px;
-    }
 
-    span{
-      text-decoration-color: green;
-    }
+    h1{
+        margin-top: 2%;
+        margin-bottom: 2%;
+      }
 
   </style>
