@@ -6,6 +6,9 @@ import {createRouter, createWebHashHistory} from "vue-router"
 import LogIn from "./components/LogIn"
 import SignUp from "./components/SignUp"
 
+import 'bootstrap/dist/css/bootstrap.css'
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
+
 
 const app = createApp(App)
 
@@ -19,6 +22,8 @@ const router = createRouter({
     routes: routes,
     linkActiveClass: "active"
 })
+
+app.use(bootstrap)
 
 app.use(router)
 app.mount("#app");
