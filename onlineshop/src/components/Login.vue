@@ -1,20 +1,24 @@
 <template>
   <div>
-    <h1>{{msg}}</h1>
-    <form>
-      <label >Benutzername: </label>
-      <input 
-        type="text"
-        id="benutzername"
-        placeholder="USERNAME"><br>
-      <label>Passwort: </label>
-      <input 
-        type="password"
-        id="passwort"
-        placeholder="PASSWORT"><br>
-      <button type="submit">Anmelden</button>
+    <h1>LogIn</h1>
+    
+    <form style="width: 40%; margin-left: auto; margin-right: auto;">
+      <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Benutzername:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputEmail3">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Passwort:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">LogIn</button>
     </form>
-      <span><router-link to="/Registrieren">Neu Anmelden</router-link></span>
+
+    <span><router-link to="/Registrieren">Neu Anmelden</router-link></span>
     
   </div>
 </template>
