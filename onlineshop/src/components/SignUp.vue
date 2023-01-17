@@ -53,6 +53,10 @@
   </template>
     
     <script>
+
+    import axios from 'axios'
+
+    
     
     export default {
       name: 'SignUp',
@@ -77,7 +81,19 @@
             password_confirm: this.password_confirm
           }
 
-          console.log(data)
+          axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+
+          axios.post('http://localhost/Projekt/',data)
+               .then(
+                  res=>{
+                    console.log(res)
+                  }
+               ).catch(
+                  err=>{
+                    console.log(err)
+                  }
+               )
+
         }
       }
     }
@@ -89,4 +105,13 @@
         margin-top: 2%;
         margin-bottom: 2%;
       }
+
+      input{
+        width: auto;
+      }
+
+      label{
+        margin-right: 3px;
+      }
+
     </style>
