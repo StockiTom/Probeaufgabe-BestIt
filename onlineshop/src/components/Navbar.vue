@@ -43,7 +43,7 @@
 
       .nav-link a:hover{
         padding: 5px;
-        background-color: lightblue;
+        text-decoration: underline;
         color: white;
       }
      
