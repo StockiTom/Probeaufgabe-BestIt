@@ -12,6 +12,8 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
 const app = createApp(App)
 
+
+
 const routes=[
     {path: "/",component: LogIn},
     {path: "/Registrieren",component: SignUp}
@@ -22,6 +24,14 @@ const router = createRouter({
     routes: routes,
     linkActiveClass: "active"
 })
+
+/*const cors = require('cors');
+const corsConfig = {
+  credentials: true,
+  origin: true,
+};
+app.use(cors(corsConfig));*/
+
 
 app.use(bootstrap)
 

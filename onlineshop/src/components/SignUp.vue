@@ -73,17 +73,22 @@
       methods: {
         handleSubmit(){
           const data={
-            user: this.user,
+            username: this.user,
             firstname: this.firstname,
             lastname: this.lastname,
             email: this.email,
             password: this.password,
-            password_confirm: this.password_confirm
+            //password_confirm: this.password_confirm
           }
 
           axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
-          axios.post('http://localhost/Projekt/',data)
+          axios.post('http://localhost/Projekt/add.php',data,{
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-type': 'application/json',
+              }
+          })    
                .then(
                   res=>{
                     console.log(res)

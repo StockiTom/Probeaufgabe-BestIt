@@ -2,7 +2,7 @@
   <div>
     <navBar msg="Online Shop"></navBar>
     <router-view></router-view>
-    <Dashboard></Dashboard>
+    <!-- <Dashboard></Dashboard> -->
     <Footer/>
   </div>
   
