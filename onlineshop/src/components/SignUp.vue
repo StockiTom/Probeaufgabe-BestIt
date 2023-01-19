@@ -81,9 +81,8 @@
             //password_confirm: this.password_confirm
           }
 
-          axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
-          axios.post('http://localhost/Projekt/add.php',data,{
+          axios.post('http://127.0.0.1:81/Projekt/add.php/',data,{
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Content-type': 'application/json',
