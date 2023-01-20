@@ -87,8 +87,7 @@
                 'Access-Control-Allow-Origin': '*',
                 'Content-type': 'application/json',
               }
-          })    
-               .then(
+          }).then(
                   res=>{
                     console.log(res)
                   }
@@ -99,7 +98,7 @@
                )
 
         }
-      }
+      } 
     }
     </script>
   
