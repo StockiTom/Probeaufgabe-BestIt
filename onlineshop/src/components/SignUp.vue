@@ -71,31 +71,18 @@
         }
       },
       methods: {
-        handleSubmit(){
-          const data={
+        async handleSubmit(){
+          const response = await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
             username: this.user,
             firstname: this.firstname,
             lastname: this.lastname,
             email: this.email,
             password: this.password,
             //password_confirm: this.password_confirm
-          }
+          });
 
-
-          axios.post('http://127.0.0.1:81/Projekt/add.php/',data,{
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-type': 'application/json',
-              }
-          }).then(
-                  res=>{
-                    console.log(res)
-                  }
-               ).catch(
-                  err=>{
-                    console.log(err)
-                  }
-               )
+          console.log(response);
+          this.$router.push('/');
 
         }
       } 
