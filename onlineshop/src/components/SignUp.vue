@@ -72,7 +72,8 @@
       },
       methods: {
         async handleSubmit(){
-          const response = await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
+
+          await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
             username: this.user,
             firstname: this.firstname,
             lastname: this.lastname,
@@ -81,7 +82,6 @@
             //password_confirm: this.password_confirm
           });
 
-          console.log(response);
           this.$router.push('/');
 
         }

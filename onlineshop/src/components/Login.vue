@@ -2,36 +2,51 @@
   <div>
     <h1>LogIn</h1>
     
-    <form style="width: 40%; margin-left: auto; margin-right: auto;">
+    <form style="width: 40%; margin-left: auto; margin-right: auto;" @submit.prevent="handleSubmit">
       <div class="row mb-3">
         <label for="inputUser1" class="col-sm-2 col-form-label">Benutzername:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputUser1">
+          <input type="text" v-model="user" class="form-control" id="inputUser1">
         </div>
       </div>
       <div class="row mb-3">
         <label for="inputPassword2" class="col-sm-2 col-form-label">Passwort:</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword2">
+          <input type="password" v-model="password" class="form-control" id="inputPassword2">
         </div>
       </div>
+      <span>Du hast noch keinen Account? <router-link to="/Registrieren">Neu Anmelden</router-link></span><br>
       <button type="submit" class="btn btn-primary">LogIn</button>
     </form>
 
-    <span><router-link to="/Registrieren">Neu Anmelden</router-link></span>
+    
     
   </div>
 </template>
   
   <script>
+
+  import axios from 'axios'
   
   export default {
     name: 'LogIn',
-    props: {
-      msg: String,
+    data(){
+      return{
+        user: '',
+        password: ''
+      }
+      
     },
     methods: {
+      async handleSubmit(){
+        const response = await axios.post('http://127.0.0.1:81/Projekt/get.php/',{
+            username: this.user,
+            password: this.password,
+          });
 
+          console.log(response);
+          this.$router.push('/');
+      }
     }
   }
   </script>

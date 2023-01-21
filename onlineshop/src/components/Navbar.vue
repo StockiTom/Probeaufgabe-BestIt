@@ -15,6 +15,9 @@
               <li class="nav-item link-light">
                 <div class="nav-link "><router-link to="/Registrieren">Registrieren</router-link></div>
               </li>
+              <li class="nav-item link-light">
+                <div class="nav-link "><router-link to="/Dashboard">Dashboard</router-link></div>
+              </li>
             </ul>
           </div>
         </div>
