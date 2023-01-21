@@ -17,10 +17,7 @@
       </div>
       <span>Du hast noch keinen Account? <router-link to="/Registrieren">Neu Anmelden</router-link></span><br>
       <button type="submit" class="btn btn-primary">LogIn</button>
-    </form>
-
-    
-    
+    </form>  
   </div>
 </template>
   
@@ -44,8 +41,14 @@
             password: this.password,
           });
 
-          console.log(response);
-          this.$router.push('/');
+          console.log(response.data);
+
+          if(response.data=="Success"){
+            this.$router.push('/Dashboard');
+          }else{
+            this.$router.push('/');
+          }
+          
       }
     }
   }

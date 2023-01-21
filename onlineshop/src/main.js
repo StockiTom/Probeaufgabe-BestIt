@@ -27,14 +27,6 @@ const router = createRouter({
     linkActiveClass: "active"
 })
 
-/*const cors = require('cors');
-const corsConfig = {
-  credentials: true,
-  origin: true,
-};
-app.use(cors(corsConfig));*/
-
-
 app.use(bootstrap)
 
 app.use(router)

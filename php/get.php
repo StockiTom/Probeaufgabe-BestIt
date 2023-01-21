@@ -12,18 +12,20 @@
     $pdo = new PDO('mysql:host=localhost;dbname=onlineshop', 'root', '');
 
     if(isset($_POST['username']) && isset($_POST['password'])){
-
         $username=$_POST['username'];
         $passwort=$_POST['password'];
 
-        $statement = $pdo->prepare("SELECT * FROM logindata where username='?' and passwort='?'");
-        $statement->execute([$username, $passwort]);
+        $statement = $pdo->prepare("SELECT * FROM logindata where username=:username and passwort=:passwort");
+        //$statement->execute([$username, $passwort]);
+        $statement->execute(array(':username' => $username,':passwort' => $passwort));
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        if($data != ""){
-            $data="Falscher Benutzer oder Passwort ist falsch";
+        if($data == ""){
+            $response="Falscher Benutzer oder Passwort ist falsch";
+        }else{
+            $response="Success";
         }
-        echo json_encode($data);
+        echo json_encode($response);
 
     }else{
         echo "FALSE";
