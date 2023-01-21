@@ -1,5 +1,7 @@
 use Onlineshop;
 
+drop table if EXISTS Products;
+
 CREATE TABLE IF NOT EXISTS Products (
     ArticleNumber varchar(255),
     Name varchar(255) not null,

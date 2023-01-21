@@ -2,10 +2,12 @@
   <div>
     <h1>Dashboard</h1>
 
-    <div class="card" style="width: 18rem;">
+    <div v-for="item in items" :key="item.ArticleNumber" class="card" style="width: 18rem;">
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <p class="card-text"><strong>Price: 25€</strong></p>
+        <img class="card-img-top" :src="require(`@/assets/images/${item.Image}`)">
+        <h5 class="card-title">{{item.Name}}</h5>
+        <p class="card-text">{{item.Description}}</p>
+        <p class="card-text"><strong>Price: {{item.Price}}€</strong></p>
       </div>
     </div>
     
@@ -18,8 +20,14 @@
 
   export default {
     name: 'Dashboard',
+    data(){
+      return{
+        items: []
+      }
+    },
     async created(){
       const response = await axios.get('http://127.0.0.1:81/Projekt/get_products.php/');
+      this.items=response.data;
     }
   }
   </script>
