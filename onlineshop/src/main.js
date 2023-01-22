@@ -13,8 +13,6 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
 const app = createApp(App)
 
-
-
 const routes=[
     {path: "/",component: LogIn},
     {path: "/Registrieren",component: SignUp},

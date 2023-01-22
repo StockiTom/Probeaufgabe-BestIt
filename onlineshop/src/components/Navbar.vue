@@ -28,13 +28,7 @@
     <script>
     
     export default {
-      name: 'navBar',
-      props: {
-        msg: String,
-      },
-      methods: {
-  
-      }
+      name: 'navBar'
     }
     </script>
   

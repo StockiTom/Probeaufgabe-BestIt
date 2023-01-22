@@ -6,6 +6,7 @@
       <div class="card-body">
         <img class="card-img-top" :src="require(`@/assets/images/${item.Image}`)">
         <h5 class="card-title">{{item.Name}}</h5>
+        <p class="card-text">{{item.ArticleNumber}}</p>
         <p class="card-text">{{item.Description}}</p>
         <p class="card-text"><strong>Price: {{item.Price}}€</strong></p>
       </div>

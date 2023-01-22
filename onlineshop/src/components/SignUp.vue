@@ -6,47 +6,49 @@
         <div class="row mb-3">
           <label for="inputUser1" class="col-sm-2 col-form-label">Benutzername:</label>
           <div class="col-sm-10">
-            <input type="text" v-model="user" class="form-control" id="inputUser1">
+            <input type="text" required v-model="user" class="form-control" id="inputUser1">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="inputName2" class="col-sm-2 col-form-label">Vorname:</label>
           <div class="col-sm-10">
-            <input type="text" v-model="firstname" class="form-control" id="inputName2">
+            <input type="text" required v-model="firstname" class="form-control" id="inputName2">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="inputLastName3" class="col-sm-2 col-form-label">Nachname:</label>
           <div class="col-sm-10">
-            <input type="text" v-model="lastname" class="form-control" id="inputLastName3">
+            <input type="text" required v-model="lastname" class="form-control" id="inputLastName3">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="inputEmail3" class="col-sm-2 col-form-label">E-Mail:</label>
           <div class="col-sm-10">
-            <input type="email" v-model="email" class="form-control" id="inputEmail2">
+            <input type="email" required v-model="email" class="form-control" id="inputEmail2">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="inputPassword3" class="col-sm-2 col-form-label">Passwort:</label>
           <div class="col-sm-10">
-            <input type="password" v-model="password" class="form-control" id="inputPassword3">
+            <input type="password" required v-model="password" class="form-control" id="inputPassword3">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="inputPassword3" class="col-sm-2 col-form-label">Passwort wiederholen:</label>
           <div class="col-sm-10">
-            <input type="password" v-model="password_confirm" class="form-control" id="inputPassword4">
+            <input type="password" required v-model="password_confirm" class="form-control" id="inputPassword4">
           </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Registrieren</button>
       </form>
+
+      <p v-if="message!=''">{{message}}</p>
 
 
     </div>
@@ -67,22 +69,28 @@
           lastname: '',
           email: '',
           password: '',
-          password_confirm: ''
+          password_confirm: '',
+          message: ''
         }
       },
       methods: {
         async handleSubmit(){
 
-          await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
-            username: this.user,
-            firstname: this.firstname,
-            lastname: this.lastname,
-            email: this.email,
-            password: this.password,
-            //password_confirm: this.password_confirm
-          });
+          if(this.password_confirm===this.password){
+            await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
+              username: this.user,
+              firstname: this.firstname,
+              lastname: this.lastname,
+              email: this.email,
+              password: this.password,
+            });
 
-          this.$router.push('/');
+            this.$router.push('/');
+          }else{
+            this.message="Passwörter stimmen nicht überein";
+          }
+
+          
 
         }
       } 

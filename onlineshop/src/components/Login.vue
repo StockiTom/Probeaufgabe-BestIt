@@ -6,13 +6,13 @@
       <div class="row mb-3">
         <label for="inputUser1" class="col-sm-2 col-form-label">Benutzername:</label>
         <div class="col-sm-10">
-          <input type="text" v-model="user" class="form-control" id="inputUser1">
+          <input type="text" required v-model="user" class="form-control" id="inputUser1">
         </div>
       </div>
       <div class="row mb-3">
         <label for="inputPassword2" class="col-sm-2 col-form-label">Passwort:</label>
         <div class="col-sm-10">
-          <input type="password" v-model="password" class="form-control" id="inputPassword2">
+          <input type="password" required v-model="password" class="form-control" id="inputPassword2">
         </div>
       </div>
       <span>Du hast noch keinen Account? <router-link to="/Registrieren">Neu Anmelden</router-link></span><br>
