@@ -39,10 +39,9 @@
       name: 'navBar',
       methods: {
         logout(){
-          this.$store.commit('login','');
+          this.$store.commit('logout');
           this.$router.push('/LogIn');
-        }
-        
+        }  
       }
     }
     </script>

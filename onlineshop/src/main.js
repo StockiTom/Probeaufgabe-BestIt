@@ -29,9 +29,13 @@ const router = createRouter({
 })
 
 /*router.beforeEach((to, from, next) =>{
-    if(to.meta.auth && store.getters[`auth/${IS_USER_ATHENTICATE_GETTER}`]){
-        next('/');
-    }else if ()
+    if(!to.meta.auth){
+        next('/LogIn');
+    }else if (to.meta.auth){
+        next('/Dashboard');
+    } else {
+        next();
+    }
 });*/
 
 app.use(bootstrap)

@@ -10,18 +10,11 @@ export default createStore({
     login (state,user) {
       state.user = user;
       localStorage.setItem('user', user);
-      alert('Logged in');
     },
     logout(state){
-      state.email ="";
+      state.user ="";
       localStorage.removeItem('user');
-      alert('Logged out');
     },
-    initialiseStore(state) {
-      if(localStorage.getItem('user')){
-        state.user = localStorage.getItem('user');
-       }
-    }
   },
   actions: {
   },
