@@ -18,6 +18,9 @@
               <li class="nav-item link-light">
                 <div class="nav-link "><router-link to="/Dashboard">Dashboard</router-link></div>
               </li>
+              <li>
+                {{ user }}
+              </li>
             </ul>
           </div>
         </div>

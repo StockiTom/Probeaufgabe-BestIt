@@ -9,8 +9,6 @@
             {{message}}
           </div>
 
-
-
           <label for="inputUser1" class="col-sm-2 col-form-label">Benutzername:</label>
           <div class="col-sm-10">
             <input type="text" required v-model="user" class="form-control" id="inputUser1">
@@ -55,16 +53,12 @@
         <button type="submit" class="btn btn-primary">Registrieren</button>
       </form>
 
-
-
     </div>
   </template>
     
     <script>
 
-    import axios from 'axios'
-
-    
+    import axios from 'axios'   
     
     export default {
       name: 'SignUp',
@@ -95,9 +89,6 @@
           }else{
             this.message="Passwörter stimmen nicht überein";
           }
-
-          
-
         }
       } 
     }

@@ -22,11 +22,7 @@
       </div>
       <span>Du hast noch keinen Account? <router-link to="/Registrieren">Neu Anmelden</router-link></span><br>
       <button type="submit" class="btn btn-primary">LogIn</button>
-
-      
     </form>
-    
-
     
   </div>
 </template>
@@ -52,12 +48,10 @@
             password: this.password,
           });
 
-          console.log(response.data);
-
           if(response.data=="Success"){
             this.$router.push('/Dashboard');
           }else{
-            this.message="User oder Passwort ist falsch";
+            this.message="Benutzername oder Passwort ist falsch";
             this.$router.push('/');
           }
           
