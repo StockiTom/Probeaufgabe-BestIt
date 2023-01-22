@@ -3,6 +3,11 @@
     <h1>LogIn</h1>
     
     <form style="width: 40%; margin-left: auto; margin-right: auto;" @submit.prevent="handleSubmit">
+
+      <div v-if="message" class="alert alert-danger" role="alert">
+        {{message}}
+      </div>
+
       <div class="row mb-3">
         <label for="inputUser1" class="col-sm-2 col-form-label">Benutzername:</label>
         <div class="col-sm-10">
@@ -17,7 +22,12 @@
       </div>
       <span>Du hast noch keinen Account? <router-link to="/Registrieren">Neu Anmelden</router-link></span><br>
       <button type="submit" class="btn btn-primary">LogIn</button>
-    </form>  
+
+      
+    </form>
+    
+
+    
   </div>
 </template>
   
@@ -30,7 +40,8 @@
     data(){
       return{
         user: '',
-        password: ''
+        password: '',
+        message: '',
       }
       
     },
@@ -46,6 +57,7 @@
           if(response.data=="Success"){
             this.$router.push('/Dashboard');
           }else{
+            this.message="User oder Passwort ist falsch";
             this.$router.push('/');
           }
           
@@ -63,5 +75,9 @@
         margin-top: 2%;
         margin-bottom: 2%;
       }
+    
+    .alert{
+      margin: 5px;
+    }
 
   </style>

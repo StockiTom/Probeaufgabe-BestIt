@@ -4,6 +4,13 @@
 
       <form style="width: 40%; margin-left: auto; margin-right: auto;" @submit.prevent="handleSubmit"> <!-- Prevent don't refresh-->
         <div class="row mb-3">
+
+          <div v-if="message" class="alert alert-danger" role="alert">
+            {{message}}
+          </div>
+
+
+
           <label for="inputUser1" class="col-sm-2 col-form-label">Benutzername:</label>
           <div class="col-sm-10">
             <input type="text" required v-model="user" class="form-control" id="inputUser1">
@@ -48,7 +55,6 @@
         <button type="submit" class="btn btn-primary">Registrieren</button>
       </form>
 
-      <p v-if="message!=''">{{message}}</p>
 
 
     </div>
