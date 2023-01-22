@@ -77,7 +77,7 @@
         async handleSubmit(){
 
           if(this.password_confirm===this.password){
-            await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
+            const response = await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
               username: this.user,
               firstname: this.firstname,
               lastname: this.lastname,
@@ -85,7 +85,14 @@
               password: this.password,
             });
 
-            this.$router.push('/');
+            console.log(response);
+
+            if(response.data==false){
+              this.message="Benutzer existiert bereits";
+            }else{
+              this.$router.push('/LogIn');
+            }
+            
           }else{
             this.message="Passwörter stimmen nicht überein";
           }

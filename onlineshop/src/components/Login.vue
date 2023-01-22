@@ -49,10 +49,11 @@
           });
 
           if(response.data=="Success"){
+            localStorage.setItem('auth', 'true');
             this.$router.push('/Dashboard');
           }else{
             this.message="Benutzername oder Passwort ist falsch";
-            this.$router.push('/');
+            this.$router.push('/LogIn');
           }
           
       }

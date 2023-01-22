@@ -3,23 +3,28 @@
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary text-bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand link-light" href="#">Online Shop</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item link-light">
-                <a class="nav-link  active" aria-current="page"><router-link to="/">LogIn</router-link></a>
+                <a class="nav-link  active" aria-current="page">
+                  <router-link to="/LogIn">LogIn</router-link>
+                </a>
               </li>
               <li class="nav-item link-light">
-                <div class="nav-link "><router-link to="/Registrieren">Registrieren</router-link></div>
+                <div class="nav-link ">
+                  <router-link to="/Registrieren">Registrieren</router-link>
+                </div>
               </li>
               <li class="nav-item link-light">
-                <div class="nav-link "><router-link to="/Dashboard">Dashboard</router-link></div>
+                <div class="nav-link ">
+                  <router-link to="/Dashboard">Dashboard</router-link>
+                </div>
               </li>
-              <li>
-                {{ user }}
+              <li class="nav-item link-light">
+                <div class="nav-link ">
+                  <router-link to="/LogIn">Logout</router-link>
+                </div>
               </li>
             </ul>
           </div>
@@ -31,7 +36,22 @@
     <script>
     
     export default {
-      name: 'navBar'
+      name: 'navBar',
+      computed: {
+
+        checkAuthStatus() {
+          if (localStorage.getItem('auth') === 'true'){
+            return true;
+          }else{
+            return false;
+          }
+        }
+        
+      },
+      method: {
+
+        
+      }
     }
     </script>
   

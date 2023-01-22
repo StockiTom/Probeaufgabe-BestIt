@@ -16,7 +16,7 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 const app = createApp(App)
 
 const routes=[
-    {path: "/",component: LogIn, meta: {auth: false}},
+    {path: "/LogIn",component: LogIn, meta: {auth: false}},
     {path: "/Registrieren",component: SignUp,meta: {auth: false}},
     {path: "/Dashboard",component: Dashboard,meta: {auth: true}} 
 ]
