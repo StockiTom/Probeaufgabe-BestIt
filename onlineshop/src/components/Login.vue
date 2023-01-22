@@ -23,6 +23,8 @@
       <span>Du hast noch keinen Account? <router-link to="/Registrieren">Neu Anmelden</router-link></span><br>
       <button type="submit" class="btn btn-primary">LogIn</button>
     </form>
+
+    {{$store.state.user}}
     
   </div>
 </template>
@@ -49,7 +51,7 @@
           });
 
           if(response.data=="Success"){
-            localStorage.setItem('auth', 'true');
+            this.$store.commit('login',this.user);
             this.$router.push('/Dashboard');
           }else{
             this.message="Benutzername oder Passwort ist falsch";

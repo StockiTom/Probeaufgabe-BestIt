@@ -9,11 +9,12 @@ import Dashboard from "./components/Dashboard"
 
 import 'bootstrap/dist/css/bootstrap.css'
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
+import store from './store'
 
 //import store from './store/store';
 
 
-const app = createApp(App)
+const app = createApp(App).use(store)
 
 const routes=[
     {path: "/LogIn",component: LogIn, meta: {auth: false}},

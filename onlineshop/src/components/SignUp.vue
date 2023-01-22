@@ -85,8 +85,6 @@
               password: this.password,
             });
 
-            console.log(response);
-
             if(response.data==false){
               this.message="Benutzer existiert bereits";
             }else{
