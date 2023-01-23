@@ -88,7 +88,7 @@
             if(response.data==false){
               this.message="Benutzer existiert bereits";
             }else{
-              this.$router.push('/LogIn');
+              this.$router.push('/Login');
             }
             
           }else{

@@ -55,7 +55,7 @@
             this.$router.push('/Dashboard');
           }else{
             this.message="Benutzername oder Passwort ist falsch";
-            this.$router.push('/LogIn');
+            this.$router.push('/Login');
           }
           
       }

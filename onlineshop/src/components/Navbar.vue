@@ -8,7 +8,7 @@
             <ul class="navbar-nav">
               <li v-if="!$store.state.user" class="nav-item link-light">
                 <a class="nav-link  active" aria-current="page">
-                  <router-link to="/LogIn">LogIn</router-link>
+                  <router-link to="/Login">LogIn</router-link>
                 </a>
               </li>
               <li v-if="!$store.state.user" class="nav-item link-light">
@@ -23,7 +23,8 @@
               </li>
               <li v-if="$store.state.user" class="av-item link-light">
                 <div class="nav-link ">
-                  <router-link @click="logout" to="/Login">Logout</router-link>
+                  <!-- <router-link @click="logout">Logout</router-link> -->
+                  <a @click="logout">Logout</a>
                 </div>
               </li>
             </ul>
@@ -40,7 +41,7 @@
       methods: {
         logout(){
           this.$store.commit('logout');
-          this.$router.push('/LogIn');
+          this.$router.push('/Login');
         }  
       }
     }
