@@ -4,6 +4,7 @@
     
     <form style="width: 40%; margin-left: auto; margin-right: auto;" @submit.prevent="handleSubmit">
 
+      <!--Hier werden die Message angezeigt-->
       <div v-if="message" class="alert alert-danger" role="alert">
         {{message}}
       </div>
@@ -42,14 +43,17 @@
       
     },
     methods: {
+      /**Diese Methode wird aufgerufen wenn Submit-Button gedrückt worden**/
       async handleSubmit(){
+        /**User und Passwort werden an get.php per POST geschickt**/
         const response = await axios.post('http://127.0.0.1:81/Projekt/get.php/',{
             username: this.user,
             password: this.password,
           });
 
+          /**Wenn LoginDaten sind richtig kommt man zum Dashboard sonst kommt man zu Login**/
           if(response.data=="Success"){
-            this.$store.commit('login',this.user);
+            this.$store.commit('login',this.user); //im store wird der User im state gespeichert
             this.$router.push('/Dashboard');
           }else{
             this.message="Benutzername oder Passwort ist falsch";

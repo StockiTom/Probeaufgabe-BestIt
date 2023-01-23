@@ -5,6 +5,7 @@
       <form style="width: 40%; margin-left: auto; margin-right: auto;" @submit.prevent="handleSubmit"> <!-- Prevent don't refresh-->
         <div class="row mb-3">
 
+          <!--Hier werden die Message angezeigt-->
           <div v-if="message" class="alert alert-danger" role="alert">
             {{message}}
           </div>
@@ -74,8 +75,10 @@
         }
       },
       methods: {
+        /**Diese Methode wird aufgerufen wenn Submit-Button gedrückt worden**/
         async handleSubmit(){
 
+          /**Wenn die Passwörter sind gleich -> werden die Daten an add.php per POST geschickt**/
           if(this.password_confirm===this.password){
             const response = await axios.post('http://127.0.0.1:81/Projekt/add.php/',{
               username: this.user,
@@ -85,6 +88,7 @@
               password: this.password,
             });
 
+            /**Wenn der Response false ist, existert der Benutzer bereits sonst geht's zu Login**/
             if(response.data==false){
               this.message="Benutzer existiert bereits";
             }else{

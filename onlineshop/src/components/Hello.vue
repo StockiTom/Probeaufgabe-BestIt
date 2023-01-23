@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--Ist nur eine Startseite mit 2 Links (Registrieren && Login)-->
     <h1>Hallo!</h1>
     <p><router-link to="/Registrieren">Neu Anmelden</router-link> oder <router-link to="/Login">Einloggen</router-link> um das Dashboard zusehen</p>
   </div>

@@ -39,8 +39,8 @@
       name: 'navBar',
       methods: {
         logout(){
-          this.$store.commit('logout');
-          this.$router.push('/Login');
+          this.$store.commit('logout'); //wird im store der state auf null gesetzt
+          this.$router.push('/Login'); //Bei Logout kommt man wieder zu Login
         }  
       }
     }

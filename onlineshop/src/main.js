@@ -14,6 +14,7 @@ import store from './store'
 
 const app = createApp(App).use(store)
 
+//Hier werden die Routen definiert
 const routes=[
     {path: "/",component: Hello, meta: {auth: false}},
     {path: "/Login",component: LogIn, meta: {auth: false}},
@@ -21,12 +22,14 @@ const routes=[
     {path: "/Dashboard",component: Dashboard,meta: {auth: true}} 
 ]
 
+//Hier wird der Router definiert
 const router = createRouter({
     history: createWebHashHistory(),
     routes: routes,
     linkActiveClass: "active"
 })
 
+//beforeEach wird verwendet damit man kein Zugriff auf das Dashboard ohne Logindaten hat
 router.beforeEach((to) =>{
 
     if (to.meta.auth===true && store.state.user){
@@ -38,6 +41,7 @@ router.beforeEach((to) =>{
     }
 })
 
+//Bootstrap wird verwendet
 app.use(bootstrap)
 
 app.use(router)
