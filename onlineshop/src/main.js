@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import {createRouter, createWebHashHistory} from "vue-router"
 
-import LogIn from "./components/LogIn"
+import LogIn from "./components/Login"
 import SignUp from "./components/SignUp"
 import Dashboard from "./components/Dashboard"
 import Hello from "./components/Hello"
