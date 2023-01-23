@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Hello this my little Onlineshop</h1>
-    <p>Sign UP or Login to see the Dashboard</p>
+    <h1>Hallo!</h1>
+    <p><router-link to="/Registrieren">Neu Anmelden</router-link> oder <router-link to="/Login">Einloggen</router-link> um das Dashboard zusehen</p>
   </div>
 </template>
   

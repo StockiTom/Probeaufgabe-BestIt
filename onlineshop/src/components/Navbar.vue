@@ -23,7 +23,6 @@
               </li>
               <li v-if="$store.state.user" class="av-item link-light">
                 <div class="nav-link ">
-                  <!-- <router-link @click="logout">Logout</router-link> -->
                   <a @click="logout">Logout</a>
                 </div>
               </li>
@@ -49,14 +48,14 @@
   
     <style>
       .nav-link a{
-        text-decoration: none;
-        color: white;
+        text-decoration: none!important;
+        color: white!important;
       }
 
       .nav-link a:hover{
-        padding: 5px;
-        text-decoration: underline;
-        color: white;
+        padding: 5px!important;
+        text-decoration: underline!important;
+        color: white!important;
       }
      
     </style>

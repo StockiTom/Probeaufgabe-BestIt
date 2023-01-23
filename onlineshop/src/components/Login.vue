@@ -23,8 +23,6 @@
       <span>Du hast noch keinen Account? <router-link to="/Registrieren">Neu Anmelden</router-link></span><br>
       <button type="submit" class="btn btn-primary">LogIn</button>
     </form>
-
-    {{$store.state.user}}
     
   </div>
 </template>

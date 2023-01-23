@@ -12,9 +12,10 @@
 
     $_POST = json_decode(file_get_contents("php://input"),true);  //CORS ERROR BEHEBUNG
 
-    $pdo = new PDO('mysql:host=localhost;dbname=onlineshop', 'root', '');
 
+    $username='user_onlineshop';
+    $password='1234';
 
-
+    $pdo = new PDO("mysql:host=localhost;dbname=onlineshop", $username, $password);
 
 ?>

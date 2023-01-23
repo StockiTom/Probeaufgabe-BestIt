@@ -1,8 +1,11 @@
+
+/**Testdaten für Products**/ 
 INSERT INTO Products (
     ArticleNumber,
     Name,
     Description,
     Price,
+    /**(Image: Name des Bildes mit Dateindung gehört eingetragen --> Bild muss in den Ordner assets/images geladen werden)**/
     Image)
 VALUES (
     "RAHDM01--RED/BLACK--165",
