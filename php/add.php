@@ -1,33 +1,34 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With, X-Custom-Header");
-header('P3P: CP="CAO PSA OUR"'); // Makes IE to support cookies
-header("Content-Type: application/json; charset=utf-8");
+    /**Description: add.php wird verwendet um einen neuen Benutzer in der Datenbank (Tabelle logindata) anzulegen */
 
-$_POST = json_decode(file_get_contents("php://input"),true);  //CORS ERROR BEHEBUNG
+    require('config.php');
 
-$pdo = new PDO('mysql:host=localhost;dbname=onlineshop', 'root', '');
+    if(isset($_POST['username']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password'])){
+        $username = $_POST['username'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $passwort = $_POST['password'];
+        
+        /**Überprüfung ob es diesen Benutzer schon gibt oder nicht */
+        $statement = $pdo->prepare("SELECT * FROM logindata where username=:username");
+        $statement->execute(array(':username' => $username));
+        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-
-if(isset($_POST['username']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password'])){
-    $username = $_POST['username'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $passwort = $_POST['password'];
+        if($data==null){
+            /***Benutzer wird mittels der POST-Daten in der Tabelle logindata angelegt */
+            $statement = $pdo->prepare("INSERT INTO logindata (UserName, FirstName, LastName, Email, Passwort) VALUES (?, ?, ?, ?, ?)");
+            $ok = $statement->execute([$username, $firstname, $lastname, $email, $passwort]);
     
-    //$statement = $pdo->prepare("INSERT INTO logindata (UserName, FirstName, LastName, Email, Passwort) VALUES (:username, :firstname, :lastname, :email, :passwort)");
-    $statement = $pdo->prepare("INSERT INTO logindata (UserName, FirstName, LastName, Email, Passwort) VALUES (?, ?, ?, ?, ?)");
-    $ok = $statement->execute([$username, $firstname, $lastname, $email, $passwort]);
+            echo true;
+        }else{
+            echo false;
+        }
 
-    echo json_encode(["ok" => $ok]);
 
-}else{
-    echo "FALSE";
-}
-
+    }else{
+        echo "FALSE";
+    }
 
 ?>

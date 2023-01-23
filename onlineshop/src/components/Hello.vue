@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h1>Hello</h1>
-    
-    
-    
+    <h1>Hello this my little Onlineshop</h1>
+    <p>Sign UP or Login to see the Dashboard</p>
   </div>
 </template>
   
@@ -12,8 +10,6 @@
   
   export default {
     name: 'Hello',
-   
-    
   }
   </script>
 

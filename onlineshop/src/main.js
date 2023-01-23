@@ -23,31 +23,11 @@ const routes=[
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes: routes
-    /*linkActiveClass: "active"*/
+    routes: routes,
+    linkActiveClass: "active"
 })
 
-/*router.beforeEach((to, from) =>{
-    console.log(from);
-    console.log(to);
-
-
-    if(to.meta.auth===true && from.path !== '/Login'){
-        return false; 
-    }else if (to.meta.auth===true && from.path == '/Login' && store.state.user){
-        return true;
-    }else if (to.meta.auth===true && from.path == '/Login' && !store.state.user){
-        return false;
-    } else {
-        return true;
-    }
-
-})*/
-
-router.beforeEach((to, from) =>{
-    console.log(from);
-    console.log(to);
-
+router.beforeEach((to) =>{
 
     if (to.meta.auth===true && store.state.user){
         return true;
@@ -56,9 +36,7 @@ router.beforeEach((to, from) =>{
     } else {
         return true;
     }
-
 })
-
 
 app.use(bootstrap)
 
